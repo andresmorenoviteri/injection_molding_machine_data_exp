@@ -1,0 +1,16 @@
+# Here you can define all your datasets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/catalog-data/introduction/#data-catalog
+
+chart_data:
+  type: partitions.PartitionedDataset
+  path: data/01_raw/chart_data
+  filename_suffix: .txt
+  load_args:
+    encoding: utf-16
+  dataset: pandas.CSVDataset
+
+experiment_data: 
+  type: pandas.ExcelDataset
+  filepath: data/01_raw/injection_molding_experiments.xlsx
